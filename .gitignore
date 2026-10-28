@@ -1,0 +1,7 @@
+.DS_Store
+# Originais das fotos (a página usa as versões .jpg otimizadas)
+img/*.png
+img/HEro desktop.jpg
+# Capturas de revisão e configuração local
+revisao/
+.claude/

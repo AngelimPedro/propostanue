@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proposta Comercial | NUE Wellness Clinic</title>
+<meta name="description" content="A experiência NUE merece começar antes da primeira visita. Proposta de presença digital da NUE Wellness Clinic.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#352014">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap">
+<style>
+/* Design System NUE v1.0 — luxo silencioso, minimalismo orgânico. Narrativa editorial em 8 atos, alternando claro e escuro. */
+@font-face{font-family:"Aloevera";src:url("fonts/Aloevera-Light.woff2") format("woff2");font-weight:300;font-display:swap}
+@font-face{font-family:"Aloevera";src:url("fonts/Aloevera-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Aloevera";src:url("fonts/Aloevera-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Aloevera";src:url("fonts/Aloevera-Bold.woff2") format("woff2");font-weight:700;font-display:swap}
+
+:root{
+  /* BRAND COLORS */
+  --nue-50:#F7F4F0; --nue-100:#DCCABD; --nue-200:#B9937E; --nue-300:#956B55; --nue-400:#593B2B; --nue-500:#352014;
+  --nue-deep:#24150D; /* derivado do nue-500: molduras de mockup e rodapé */
+
+  /* SEMANTIC */
+  --bg-primary:#F7F4F0; --bg-secondary:#EEE7E0; --bg-surface:#FFFFFF; --bg-dark:#593B2B;
+  --text-primary:#352014; --text-secondary:#755D50; --text-inverse:#FFFFFF;
+  --border-subtle:#E5DAD1; --border-strong:#B9937E;
+  --line-d:rgba(247,244,240,.14); --line-l:rgba(89,59,43,.14);
+
+  /* Gradiente orgânico: transições difusas, sem limites perceptíveis */
+  --grad-organic:
+    radial-gradient(110% 90% at 92% 0%,rgba(185,147,126,.38),transparent 60%),
+    radial-gradient(90% 80% at 0% 100%,rgba(53,32,20,.85),transparent 70%),
+    var(--nue-400);
+
+  /* TYPOGRAPHY (Jost só como substituta enquanto a Aloevera não estiver em /fonts) */
+  --font-primary:"Aloevera","Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+
+  /* SPACING */
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px; --space-6:32px;
+  --space-7:48px; --space-8:64px; --space-9:96px; --space-10:128px;
+
+  /* RADIUS */
+  --radius-sm:2px; --radius-md:4px; --radius-lg:8px; --radius-full:9999px;
+
+  /* MOTION */
+  --ease-nue:cubic-bezier(.22,1,.36,1);
+  --duration-fast:180ms; --duration-normal:350ms; --duration-slow:600ms;
+
+  /* LAYOUT: margens 24/40/80/112, seções 80/104/144/176, blocos 56/72/88/104 */
+  --container-max:1440px; --g:24px; --sec:80px; --block:56px;
+  color-scheme:dark;
+}
+@media(min-width:768px){:root{--g:40px;--sec:104px;--block:72px}}
+@media(min-width:1100px){:root{--g:80px;--sec:144px;--block:88px}}
+@media(min-width:1440px){:root{--g:112px;--sec:176px;--block:104px}}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--nue-500);color:var(--nue-50);font-family:var(--font-primary);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--font-primary);font-weight:300;line-height:1.1;margin:0;text-wrap:balance}
+p{margin:0} ul{margin:0;padding:0;list-style:none} a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--nue-200);outline-offset:3px;border-radius:2px}
+.light :focus-visible{outline-color:var(--nue-300)}
+button{font:inherit;color:inherit}
+
+.wrap{width:100%;max-width:var(--container-max);margin:0 auto;padding-left:max(var(--g),env(safe-area-inset-left,0px));padding-right:max(var(--g),env(safe-area-inset-right,0px))}
+.sec{padding-block:var(--sec);position:relative;overflow:hidden}
+.light{background:var(--bg-primary);color:var(--text-primary)}
+.light.alt-bg{background:var(--bg-secondary)}
+/* Overline: 11px SemiBold, caixa alta, 0,2em */
+.eyebrow{display:block;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--nue-200)}
+.light .eyebrow{color:var(--text-secondary)}
+.h2{font-size:clamp(36px,4.8vw,60px);font-weight:300;line-height:1.1;margin-top:28px;letter-spacing:-.01em;max-width:20ch}
+.h2 em{font-style:normal;color:var(--nue-200)}
+.light .h2 em{color:var(--nue-300)}
+.lead{font-size:clamp(17px,1.3vw,19px);font-weight:400;max-width:56ch;margin-top:var(--space-6);opacity:.88}
+.light .lead{color:var(--text-secondary);opacity:1}
+@media(min-width:1100px){
+  .intro{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:clamp(56px,7vw,128px);align-items:end}
+  .intro .eyebrow{grid-column:1/-1}
+  .intro .lead{grid-column:2;margin-top:0;padding-bottom:10px;max-width:46ch}
+}
+.punch{font-weight:300;font-size:clamp(22px,2.6vw,36px);line-height:1.25;max-width:30ch}
+.punch em{font-style:normal;color:var(--nue-200)}
+.light .punch em{color:var(--nue-300)}
+.concept{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--nue-200)}
+.concept::before{content:"";width:6px;height:6px;border-radius:50%;border:1px solid currentColor}
+
+/* ===== LINHAS ORGÂNICAS (0,5–1px, 15–35% de opacidade, movimento lento) ===== */
+.curve{position:absolute;pointer-events:none;color:var(--nue-200);opacity:.3;width:140%;left:-20%;height:auto}
+.curve path{fill:none;stroke:currentColor;stroke-width:1;vector-effect:non-scaling-stroke}
+.curve path+path{opacity:.55}
+@media(prefers-reduced-motion:no-preference){
+  .curve{animation:drift 14s ease-in-out infinite alternate}
+  @keyframes drift{to{transform:translate3d(-4%,12px,0)}}
+}
+
+/* ===== CENA COM GRADIENTE ORGÂNICO (substituída por foto via data-photo) ===== */
+.scene{position:relative;overflow:hidden;isolation:isolate;
+  background:
+    radial-gradient(55% 45% at 68% 28%,rgba(247,244,240,.55),transparent 70%),
+    radial-gradient(65% 55% at 18% 78%,rgba(149,107,85,.75),transparent 72%),
+    radial-gradient(70% 60% at 92% 96%,rgba(53,32,20,.85),transparent 70%),
+    linear-gradient(165deg,var(--nue-200) 0%,var(--nue-400) 62%,var(--nue-500) 100%)}
+.scene::before{content:"";position:absolute;left:26%;right:20%;top:14%;bottom:28%;border-radius:58% 42% 61% 39%/46% 54% 46% 54%;
+  background:radial-gradient(ellipse at 45% 35%,var(--nue-50) 0%,var(--nue-100) 34%,var(--nue-200) 64%,transparent 100%);filter:blur(28px);opacity:.75;z-index:-1}
+.scene::after{content:"";position:absolute;left:0;right:0;bottom:0;height:30%;background:linear-gradient(180deg,transparent,rgba(36,21,13,.6))}
+.scene.alt{background:
+    radial-gradient(50% 50% at 28% 26%,rgba(247,244,240,.5),transparent 70%),
+    radial-gradient(70% 60% at 85% 70%,rgba(89,59,43,.8),transparent 72%),
+    linear-gradient(150deg,var(--nue-100) 0%,var(--nue-300) 55%,var(--nue-500) 100%)}
+.scene.alt::before{left:8%;right:46%;top:10%;bottom:32%;border-radius:42% 58% 37% 63%/55% 45% 55% 45%}
+.scene.soft::before{left:18%;right:18%;top:22%;bottom:30%;filter:blur(40px);border-radius:50%}
+.scene .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+
+/* ===== NAV (68px mobile / 88px desktop) ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background var(--duration-normal) var(--ease-nue),border-color var(--duration-normal) var(--ease-nue);border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(53,32,20,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-color:var(--line-d)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{display:flex;align-items:baseline;gap:10px;font-weight:300;letter-spacing:.32em;font-size:17px;color:var(--nue-50);text-decoration:none;white-space:nowrap}
+.brand small{letter-spacing:.2em;font-size:10px;color:var(--nue-100);opacity:.75}
+.brand.has-logo img{height:26px;width:auto}
+.nav-links{display:none;gap:32px;font-size:14px;letter-spacing:.02em}
+.nav-links a{text-decoration:none;color:var(--nue-100);opacity:.85;transition:opacity var(--duration-fast) var(--ease-nue)}
+.nav-links a:hover{opacity:1}
+.progress{position:absolute;left:0;bottom:-1px;height:1px;width:100%;background:var(--nue-200);transform-origin:left;transform:scaleX(0)}
+.menu-btn{background:none;border:1px solid rgba(247,244,240,.4);border-radius:var(--radius-md);height:44px;padding:0 16px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.mobile-menu{position:fixed;inset:0;z-index:49;background:var(--nue-500);display:flex;flex-direction:column;gap:2px;
+  padding:calc(100px + env(safe-area-inset-top,0px)) max(var(--g),env(safe-area-inset-right,0px)) calc(40px + env(safe-area-inset-bottom,0px)) max(var(--g),env(safe-area-inset-left,0px))}
+.mobile-menu a{font-weight:300;font-size:32px;text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line-d)}
+@media(min-width:960px){.nav .wrap{height:88px}.nav-links{display:flex}.menu-btn{display:none}.mobile-menu{display:none!important}}
+
+/* ===== 01 HERO (≈90vh) ===== */
+.hero{min-height:90vh;min-height:90svh;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:var(--nue-500)}
+.hero .scene{position:absolute;inset:0}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(53,32,20,.6) 0%,rgba(53,32,20,.25) 22%,rgba(53,32,20,.9) 46%,var(--nue-500) 100%);z-index:1}
+.hero .curve{z-index:1;bottom:6%}
+.hero .wrap{position:relative;z-index:2;padding-top:140px;padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))}
+.hero h1{font-size:clamp(44px,6.4vw,88px);font-weight:300;line-height:1.05;letter-spacing:-.015em;max-width:15ch;margin-top:var(--space-5)}
+.hero h1 em{font-style:normal;color:var(--nue-100)}
+.hero-foot{display:grid;gap:var(--space-5);margin-top:var(--space-6)}
+.hero-foot p{max-width:46ch;color:var(--nue-100)}
+.text-btn{display:inline-flex;align-items:center;gap:10px;margin-top:var(--space-7);font-size:15px;color:var(--nue-100);text-decoration:none}
+.text-btn .arr{transition:transform var(--duration-normal) var(--ease-nue)}
+.text-btn:hover .arr{transform:translateY(4px)}
+@media(min-width:960px){
+  .hero{align-items:center;min-height:100vh;min-height:100svh}
+  .hero .shade{background:
+    linear-gradient(90deg,rgba(53,32,20,.95) 0%,rgba(53,32,20,.84) 32%,rgba(53,32,20,.4) 60%,rgba(53,32,20,.08) 100%),
+    linear-gradient(0deg,rgba(53,32,20,.75),transparent 32%),
+    linear-gradient(180deg,rgba(53,32,20,.6),transparent 22%)}
+  .hero .wrap{padding-top:180px;padding-bottom:140px}
+  .hero-foot{max-width:480px;margin-top:40px}
+}
+@media(prefers-reduced-motion:no-preference){
+  .hero h1,.hero-foot,.hero .eyebrow{animation:rise 800ms var(--ease-nue) both}
+  .hero-foot{animation-delay:.15s}
+  .hero .scene{animation:breathe 2.4s var(--ease-nue) both}
+  @keyframes rise{from{transform:translateY(22px);opacity:.001}to{transform:none;opacity:1}}
+  @keyframes breathe{from{transform:scale(1.06)}to{transform:none}}
+}
+
+/* ===== 02 OPORTUNIDADE ===== */
+.journey{position:relative;display:grid;gap:40px;margin-top:var(--block)}
+@media(min-width:900px){.journey{grid-template-columns:repeat(3,1fr);gap:clamp(24px,3.4vw,56px)}
+  .journey::before{content:"";position:absolute;top:19px;left:20px;right:20px;height:1px;background:linear-gradient(90deg,rgba(149,107,85,.5),rgba(185,147,126,.3))}}
+.step{display:grid;gap:20px;position:relative}
+.step .dot{width:40px;height:40px;border-radius:50%;border:1px solid var(--nue-300);background:var(--bg-primary);display:grid;place-items:center;font-size:14px;color:var(--nue-300);position:relative;z-index:1}
+.step:last-child .dot{background:var(--nue-400);border-color:var(--nue-400);color:var(--text-inverse)}
+.step h3{font-size:clamp(22px,2.2vw,28px);font-weight:400}
+.step p{color:var(--text-secondary);font-size:16px;max-width:30ch}
+.tile{aspect-ratio:4/3;max-width:100%;border-radius:var(--radius-md);overflow:hidden;position:relative;container-type:inline-size;background:var(--bg-surface);display:grid;place-items:center;padding:8%}
+/* mini UIs */
+.ui-search{width:100%;display:grid;gap:3.6cqw}
+.ui-search .bar{display:flex;align-items:center;gap:3cqw;background:var(--bg-primary);border-radius:999px;padding:3.6cqw 5cqw;font-size:max(11px,4.4cqw);color:var(--text-secondary);border:1px solid var(--border-subtle)}
+.ui-search .bar::before{content:"";width:3.4cqw;height:3.4cqw;min-width:9px;min-height:9px;border:1.5px solid var(--nue-200);border-radius:50%}
+.ui-search .res{background:var(--bg-primary);border-radius:var(--radius-md);padding:3.4cqw 4cqw;display:grid;gap:1.6cqw}
+.ui-search .res b{font-weight:400;font-size:max(12px,4.8cqw);color:var(--nue-400)}
+.ui-search .res i{display:block;height:1.6cqw;min-height:4px;border-radius:3px;background:rgba(53,32,20,.1)}
+.ui-search .res.hl{background:var(--bg-surface);border:1px solid var(--border-strong)}
+.ui-profile{width:100%;display:grid;grid-template-columns:34% 1fr;gap:5cqw;align-items:center}
+.ui-profile .scene{aspect-ratio:3/4;border-radius:14px;box-shadow:0 14px 32px -18px rgba(53,32,20,.55)}
+.ui-profile .photo{object-position:62% 12%} /* rosto no alto, à direita do retrato */
+/* Degradê sobre a foto: escurece a base em tom espresso e suaviza o topo */
+.ui-profile .scene::after{z-index:2;top:0;height:auto;border-radius:inherit;
+  background:linear-gradient(180deg,rgba(53,32,20,.18) 0%,transparent 28%,transparent 52%,rgba(53,32,20,.55) 82%,rgba(36,21,13,.85) 100%);
+  box-shadow:inset 0 0 0 1px rgba(247,244,240,.08)}
+.ui-profile b{display:block;font-weight:300;font-size:max(15px,7cqw);line-height:1.05;color:var(--text-primary)}
+.ui-profile small{display:block;font-size:max(10px,3.4cqw);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary);margin-top:2cqw}
+.ui-profile .chips{display:flex;flex-wrap:wrap;gap:1.8cqw;margin-top:4cqw}
+.ui-profile .chips i{height:max(14px,5.2cqw);width:16cqw;border-radius:var(--radius-sm);border:1px solid rgba(149,107,85,.35)}
+.ui-profile .chips i:nth-child(2){width:22cqw}
+.ui-chat{width:100%;display:grid;gap:3.4cqw}
+.ui-chat .msg{justify-self:end;max-width:82%;background:var(--nue-400);color:var(--text-inverse);padding:3.4cqw 4.4cqw;border-radius:12px 12px 2px 12px;font-size:max(11px,4.2cqw);line-height:1.4}
+.ui-chat .rep{justify-self:start;max-width:78%;background:var(--bg-secondary);color:var(--text-secondary);padding:3.4cqw 4.4cqw;border-radius:12px 12px 12px 2px;font-size:max(11px,4.2cqw);line-height:1.4}
+.ui-chat .cta{justify-self:start;background:var(--nue-400);color:var(--text-inverse);border-radius:var(--radius-md);padding:2.8cqw 5cqw;font-size:max(10px,3.6cqw);letter-spacing:.04em}
+.quote-band{margin-top:var(--block);padding-top:clamp(40px,4vw,64px);border-top:1px solid var(--line-l);display:grid;gap:16px}
+.sec:not(.light) .quote-band{border-color:var(--line-d)}
+
+/* ===== 03 DESAFIO ===== */
+.flows{display:grid;gap:clamp(16px,2vw,32px);margin-top:var(--block)}
+@media(min-width:860px){.flows{grid-template-columns:1fr 1fr}}
+.flow{border-radius:var(--radius-md);padding:clamp(28px,4vw,64px);display:grid;gap:32px;align-content:start}
+.flow.generic{border:1px solid var(--line-d);background:rgba(247,244,240,.03)}
+.flow.direct{background:var(--grad-organic);border:1px solid rgba(185,147,126,.35)}
+.flow-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.flow-head span{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--nue-200)}
+.flow-head h3{font-size:clamp(22px,2.2vw,28px);font-weight:400;width:100%}
+.path{display:grid;gap:0;list-style:none;margin:0;padding:0}
+.path li{position:relative;padding:0 0 30px 40px;font-weight:300;font-size:clamp(18px,1.6vw,20px);line-height:1.3}
+.path li:last-child{padding-bottom:0}
+.path li::before{content:"";position:absolute;left:8px;top:6px;width:11px;height:11px;border-radius:50%;border:1px solid var(--nue-200);background:var(--nue-500)}
+.path li::after{content:"";position:absolute;left:13px;top:20px;bottom:-2px;width:0;border-left:1px dashed rgba(185,147,126,.45)}
+.path li:last-child::after{display:none}
+.generic .path li{color:rgba(247,244,240,.65)}
+.generic .path li.lost{color:rgba(247,244,240,.5)}
+.generic .path li.lost small{display:block;font-size:12px;letter-spacing:.04em;opacity:.85;margin-top:4px}
+.direct .path li::before{border-color:var(--nue-200);background:var(--nue-200)}
+.direct .path li::after{border-left:1px solid var(--nue-200)}
+.direct .path li:last-child::before{width:15px;height:15px;left:6px;top:4px;background:var(--nue-100);border-color:var(--nue-100);box-shadow:0 0 0 6px rgba(220,202,189,.15)}
+.direct .path li:last-child{color:var(--nue-100)}
+.audience{display:grid;gap:8px;margin-top:var(--block)}
+@media(min-width:700px){.audience{grid-template-columns:repeat(3,1fr);gap:var(--space-5)}}
+.aud{padding:20px 0;border-top:1px solid var(--line-d)}
+.aud span{display:block;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--nue-200)}
+.aud b{display:block;font-weight:300;font-size:22px;margin-top:6px}
+
+/* ===== 04 ECOSSISTEMA ===== */
+.eco{margin-top:var(--block);display:grid;justify-items:center}
+.orb{width:clamp(150px,22vw,220px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;position:relative;
+  background:radial-gradient(circle at 35% 30%,var(--nue-100) 0%,var(--nue-300) 45%,var(--nue-400) 100%);color:var(--nue-50)}
+.orb::before,.orb::after{content:"";position:absolute;inset:-22px;border-radius:50%;border:1px solid rgba(149,107,85,.25)}
+.orb::after{inset:-48px;border-color:rgba(149,107,85,.12)}
+.orb b{font-weight:300;letter-spacing:.36em;font-size:clamp(26px,3vw,34px);display:block;padding-left:.36em}
+.orb small{display:block;font-size:9.5px;font-weight:600;letter-spacing:.24em;margin-top:6px;opacity:.85}
+.orb .has-logo img{width:62%;height:auto;margin:auto}
+@media(prefers-reduced-motion:no-preference){.orb::before{animation:pulse 10s ease-in-out infinite}@keyframes pulse{50%{transform:scale(1.05);opacity:.5}}}
+.stem{width:1px;height:72px;background:linear-gradient(var(--nue-300),rgba(149,107,85,.4));margin-top:48px}
+.branches{display:none}
+.pillars{display:grid;gap:40px;width:100%;margin-top:0}
+.pillar{position:relative;padding-left:28px;border-left:1px solid rgba(149,107,85,.35)}
+.pillar::before{content:"";position:absolute;left:-5px;top:4px;width:9px;height:9px;border-radius:50%;background:var(--nue-300)}
+.pillar h3{font-size:clamp(22px,2.2vw,28px);font-weight:400;letter-spacing:.02em}
+.pillar p{font-size:14px;color:var(--text-secondary);margin-top:6px}
+.nodes{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.nodes li{font-size:14px;padding:7px 14px;border-radius:var(--radius-full);border:1px solid rgba(149,107,85,.3);color:var(--text-secondary);background:var(--bg-surface)}
+.nodes.people li{background:var(--nue-400);color:var(--text-inverse);border-color:var(--nue-400)}
+@media(min-width:900px){
+  .stem{margin-top:56px;height:40px}
+  .branches{display:block;width:66.66%;height:56px;border:1px solid rgba(149,107,85,.4);border-bottom:none;border-radius:50% 50% 0 0/100% 100% 0 0;position:relative}
+  .branches::after{content:"";position:absolute;left:50%;top:-1px;width:1px;height:56px;background:rgba(149,107,85,.4)}
+  .pillars{grid-template-columns:repeat(3,1fr);gap:clamp(32px,4.4vw,72px);text-align:center}
+  .pillar{padding:28px 8px 0;border-left:none}
+  .pillar::before{left:50%;top:-5px;transform:translateX(-50%)}
+  .nodes{justify-content:center}
+}
+.eco-close{margin-top:var(--block);text-align:center;display:grid;justify-items:center}
+
+/* ===== MOCKUPS ===== */
+.browser{border-radius:10px;overflow:hidden;background:var(--nue-500);color:var(--nue-50);border:1px solid rgba(247,244,240,.16);container-type:inline-size;width:100%}
+.browser .bar{height:max(18px,4.4cqw);display:flex;align-items:center;gap:1.2cqw;padding:0 2.4cqw;background:var(--nue-deep);border-bottom:1px solid rgba(247,244,240,.08)}
+.browser .bar i{width:max(5px,1.1cqw);height:max(5px,1.1cqw);border-radius:50%;background:rgba(247,244,240,.22)}
+.browser .bar span{margin-left:auto;margin-right:auto;width:34%;height:max(8px,2cqw);border-radius:99px;background:rgba(247,244,240,.08)}
+.site .s-hero{position:relative;aspect-ratio:16/8.4;display:flex;align-items:flex-end}
+.site .s-hero .scene{position:absolute;inset:0}
+.site .s-hero .scene + .ov{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(53,32,20,.92) 0%,rgba(53,32,20,.55) 48%,rgba(53,32,20,0) 75%)}
+.site .s-nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:2.6cqw 4cqw;z-index:2}
+.site .s-nav b{font-weight:300;letter-spacing:.36em;font-size:max(8px,2cqw)}
+.site .s-nav span{display:flex;gap:2cqw}
+.site .s-nav span i{width:5cqw;height:.8cqw;min-height:2px;border-radius:2px;background:rgba(247,244,240,.45)}
+.site .s-copy{position:relative;z-index:2;padding:0 4cqw 5cqw;max-width:62%}
+.site .s-copy h5{margin:0;font-weight:300;font-size:max(13px,5cqw);line-height:1.05}
+.site .s-copy em{display:inline-block;margin-top:2.4cqw;font-style:normal;font-size:max(7px,1.6cqw);letter-spacing:.06em;padding:1.2cqw 2.6cqw;background:var(--nue-50);color:var(--nue-500);border-radius:var(--radius-sm)}
+.site .s-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6cqw;padding:3cqw 4cqw 4cqw;background:var(--nue-50)}
+.site .s-row div{aspect-ratio:4/5;border-radius:var(--radius-sm);position:relative;overflow:hidden}
+.site .s-row div::after{content:"";position:absolute;inset:0;height:auto;z-index:2;border-radius:inherit;
+  background:linear-gradient(rgba(247,244,240,.85),rgba(247,244,240,.85)) 18% 88%/55% max(2px,.9cqw) no-repeat,
+    linear-gradient(180deg,transparent 45%,rgba(36,21,13,.75) 100%)}
+.site .s-row .photo{object-position:50% 18%}
+.site .s-row .photo[src$="especialista.jpg"]{object-position:62% 14%}
+.site .s-hero .photo{object-position:75% 55%}
+.site .s-row .scene::before{left:20%;right:20%}
+
+.phone{width:100%;max-width:300px;aspect-ratio:9/19;border-radius:34px;padding:9px;background:var(--nue-deep);border:1px solid rgba(247,244,240,.18);container-type:inline-size;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
+.phone .screen{height:100%;border-radius:26px;overflow:hidden;background:var(--nue-50);display:flex;flex-direction:column}
+.lp-top{position:relative;flex:0 0 54%;display:flex;align-items:flex-end;color:var(--nue-50)}
+.lp-top .scene{position:absolute;inset:0}
+.lp-top .photo{object-position:62% 14%} /* rosto do retrato no alto, à direita */
+.lp-top .ov{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(53,32,20,.1) 30%,rgba(53,32,20,.92))}
+.lp-top .notch{position:absolute;top:3.4cqw;left:50%;transform:translateX(-50%);width:28cqw;height:6cqw;border-radius:99px;background:var(--nue-deep);z-index:2}
+.lp-top .tx{position:relative;z-index:2;padding:0 7cqw 7cqw}
+.lp-top small{font-size:max(8px,3.4cqw);font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--nue-100)}
+.lp-top b{display:block;font-weight:300;font-size:max(18px,10cqw);line-height:1.05;margin-top:2cqw}
+.lp-body{padding:6cqw 7cqw;display:grid;gap:3.4cqw;align-content:start;flex:1;color:var(--text-primary)}
+.lp-doc{display:flex;align-items:center;gap:3.4cqw}
+.lp-doc .scene{width:13cqw;aspect-ratio:1;border-radius:50%}
+.lp-doc span{font-size:max(9px,3.8cqw);line-height:1.3;color:var(--text-secondary)}
+.lp-doc span strong{display:block;font-weight:400;font-size:max(11px,4.8cqw);color:var(--text-primary)}
+.lp-doc .photo{object-position:58% 14%;transform:scale(2.2);transform-origin:58% 18%} /* aproxima no rosto */
+.lp-tags{display:flex;flex-wrap:wrap;gap:1.6cqw}
+.lp-tags li{font-size:max(8px,3.2cqw);padding:1cqw 2.6cqw;border-radius:var(--radius-full);border:1px solid rgba(149,107,85,.3);color:var(--text-secondary)}
+.lp-line{height:1.6cqw;min-height:4px;border-radius:3px;background:rgba(53,32,20,.1)}
+.lp-line.s{width:70%}
+.lp-feat{display:grid;grid-template-columns:1fr 1fr;gap:2.4cqw}
+.lp-feat i{height:12cqw;border-radius:var(--radius-md);background:rgba(220,202,189,.4)}
+.lp-btn{margin-top:auto;text-align:center;background:var(--nue-400);color:var(--text-inverse);border-radius:var(--radius-md);padding:4cqw;font-size:max(9px,3.8cqw);letter-spacing:.04em}
+
+/* ===== 05 SOLUÇÃO ===== */
+.sols{display:grid;gap:clamp(16px,2vw,32px);margin-top:var(--block)}
+@media(min-width:960px){.sols{grid-template-columns:5fr 7fr;align-items:stretch}}
+.sol{border-radius:var(--radius-md);padding:clamp(28px,3.6vw,64px);display:flex;flex-direction:column;gap:clamp(28px,2.6vw,40px);min-width:0}
+.sol.one{background:var(--bg-surface)}
+.sol.two{background:var(--grad-organic);color:var(--nue-50)}
+.sol .lbl{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--text-secondary)}
+.sol.two .lbl{color:var(--nue-100)}
+.sol .lbl em{font-style:normal;padding:4px 10px;border:1px solid currentColor;border-radius:var(--radius-sm);letter-spacing:.14em}
+.sol h3{font-size:clamp(26px,2.8vw,36px);font-weight:300}
+.sol .tagline{font-size:17px;margin-top:-12px;opacity:.85;max-width:48ch}
+.sol .visual{position:relative}
+.stack{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.2vw,16px)}
+.stack .pg{position:relative;border-radius:var(--radius-md);aspect-ratio:5/4;overflow:hidden;border:1px solid rgba(247,244,240,.2);background:var(--nue-50);color:var(--nue-500);container-type:inline-size;display:flex;flex-direction:column}
+.stack .pg .scene{flex:0 0 58%}
+.stack .pg .photo[src$="lp-rinoplastia.jpg"]{object-position:18% 40%}
+.stack .pg .photo[src$="lp-spa.jpg"]{object-position:8% 50%}
+.stack .pg span{padding:5cqw 7cqw;font-size:max(11px,7.4cqw);line-height:1.1}
+.stack .browser{grid-column:1/-1}
+.deliv{display:flex;flex-wrap:wrap;gap:8px}
+.deliv li{font-size:14px;padding:6px 12px;border-radius:var(--radius-full);border:1px solid rgba(149,107,85,.3);color:var(--text-secondary)}
+.sol.two .deliv li{border-color:rgba(247,244,240,.22);color:var(--nue-100)}
+.sol.two .deliv li.plus{background:rgba(185,147,126,.2);border-color:rgba(185,147,126,.5);color:var(--text-inverse)}
+.sol .note{font-size:14px;color:var(--text-secondary);margin-top:-8px;max-width:52ch}
+.sol-close{margin-top:var(--block);display:grid;gap:24px}
+@media(min-width:860px){.sol-close{grid-template-columns:1fr 1fr;gap:clamp(48px,6vw,96px)}}
+.sol-close p{font-weight:300;font-size:clamp(20px,2vw,26px);line-height:1.35;padding-top:20px;border-top:1px solid var(--line-l)}
+.sol-close p b{font-weight:400;color:var(--nue-300)}
+
+/* ===== 06 VISUALIZAÇÃO ===== */
+.vis{background:radial-gradient(ellipse at 80% 0%,rgba(149,107,85,.35),transparent 55%),var(--nue-500)}
+.showcase{position:relative;margin-top:var(--block);padding-bottom:0}
+.showcase .main{width:100%}
+.showcase .phone-pos{display:flex;justify-content:center;margin-top:-18%;position:relative;z-index:2;padding-right:4%}
+.showcase .phone{max-width:min(46%,280px)}
+@media(min-width:900px){
+  .showcase{padding-bottom:6%}
+  .showcase .main{width:76%}
+  .showcase .phone-pos{position:absolute;right:0;bottom:0;margin:0;padding:0;width:23%;justify-content:flex-end}
+  .showcase .phone{max-width:100%}
+}
+.vis-cap{display:grid;gap:40px;margin-top:var(--block)}
+@media(min-width:860px){.vis-cap{grid-template-columns:1fr 1fr;gap:clamp(48px,6vw,96px)}}
+.vis-cap h3{font-size:clamp(22px,2.2vw,28px);font-weight:400}
+.vis-cap .k{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--nue-200);display:block;margin-bottom:10px}
+.vis-cap .deliv{margin-top:20px}
+.vis-cap .deliv li{border-color:var(--line-d);color:var(--nue-100)}
+
+/* ===== 07 INVESTIMENTO ===== */
+.prices{display:grid;gap:clamp(16px,2vw,32px);margin-top:var(--block)}
+@media(min-width:860px){.prices{grid-template-columns:1fr 1.15fr;align-items:end}}
+.price-card{border-radius:var(--radius-md);padding:clamp(28px,4vw,64px);display:flex;flex-direction:column;gap:24px}
+.price-card.one{background:var(--bg-surface)}
+.price-card.two{background:var(--grad-organic);color:var(--nue-50);position:relative}
+.price-card .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--text-secondary)}
+.price-card.two .top{color:var(--nue-100)}
+.badge{padding:5px 12px;border-radius:var(--radius-sm);background:var(--nue-100);color:var(--nue-500);letter-spacing:.16em}
+.price-card h3{font-size:clamp(24px,2.6vw,32px);font-weight:300}
+.amount{font-weight:300;font-size:clamp(44px,6vw,80px);line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap;margin-top:12px}
+.amount sup{font-size:.32em;vertical-align:top;position:relative;top:.55em;margin-right:6px;font-weight:400}
+.price-card .term{display:flex;justify-content:space-between;gap:12px;padding-top:18px;border-top:1px solid var(--border-subtle);font-size:14px;flex-wrap:wrap}
+.price-card.two .term{border-color:var(--line-d)}
+.price-card .term span{opacity:.75}
+.price-card .term b{font-weight:600}
+.delta{margin-top:clamp(16px,2vw,32px);border-radius:var(--radius-md);padding:clamp(32px,4.4vw,72px);color:var(--nue-50);display:grid;gap:20px;
+  background:radial-gradient(90% 140% at 100% 0%,rgba(185,147,126,.55),transparent 65%),radial-gradient(70% 120% at 0% 100%,rgba(53,32,20,.6),transparent 70%),var(--nue-400)}
+@media(min-width:860px){.delta{grid-template-columns:auto 1fr;gap:56px;align-items:center}}
+.delta .plus{font-weight:300;font-size:clamp(40px,5.4vw,72px);line-height:1;white-space:nowrap;font-variant-numeric:tabular-nums}
+.delta .plus small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;opacity:.85;font-weight:600}
+.delta p{font-size:17px;max-width:58ch}
+.delta p b{font-weight:600}
+.conds{display:grid;gap:0;margin-top:var(--block);border-top:1px solid var(--line-l)}
+@media(min-width:860px){.conds{grid-template-columns:repeat(2,1fr)}}
+.cond{padding:32px 32px 32px 0;border-bottom:1px solid var(--line-l)}
+@media(min-width:860px){.cond+.cond{padding-left:40px;border-left:1px solid var(--line-l)}}
+.cond span{display:block;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--text-secondary)}
+.cond b{display:block;font-weight:300;font-size:clamp(20px,1.8vw,22px);line-height:1.25;margin-top:8px}
+.cond p{font-size:14px;color:var(--text-secondary);margin-top:8px}
+.fine{margin-top:var(--space-5);font-size:14px;color:var(--text-secondary);max-width:84ch}
+
+/* ===== 08 ENCERRAMENTO (seção premium em surface-dark) ===== */
+.closing{background:var(--bg-dark)}
+.closing .scene{position:absolute;inset:0;opacity:.5}
+.closing .shade{position:absolute;inset:0;background:linear-gradient(180deg,var(--nue-400) 0%,rgba(89,59,43,.7) 40%,rgba(53,32,20,.95) 100%)}
+.closing .curve{top:30%;opacity:.22;color:var(--nue-100)}
+.closing .wrap{position:relative;z-index:2}
+.closing .eyebrow,.closing .concept{color:var(--nue-100)}
+.closing .h2{max-width:22ch}
+.closing .h2 em{color:var(--nue-100)}
+.closing .lead{color:var(--nue-100);opacity:1}
+.final{font-weight:300;font-size:clamp(28px,4vw,56px);line-height:1.1;margin-top:var(--block);max-width:24ch;color:var(--nue-100)}
+/* Botões: 52px, padding 28px, raio 4px, 15px Regular */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:14px 28px;border-radius:var(--radius-md);border:1px solid transparent;font-size:15px;font-weight:400;text-decoration:none;cursor:pointer;
+  transition:background var(--duration-fast) var(--ease-nue),transform var(--duration-fast) var(--ease-nue)}
+.btn .arr{transition:transform 220ms var(--ease-nue)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--nue-400);color:var(--text-inverse)}
+.btn-primary:hover{background:var(--nue-500);transform:translateY(-1px)}
+.btn-inverse{background:var(--nue-50);color:var(--nue-500)}
+.btn-inverse:hover{background:var(--nue-100);transform:translateY(-1px)}
+
+footer{background:var(--nue-deep);border-top:1px solid var(--line-d)}
+footer .wrap{padding-top:36px;padding-bottom:calc(36px + env(safe-area-inset-bottom,0px));display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+footer p{color:var(--nue-100);opacity:.75;font-size:14px;letter-spacing:.02em}
+
+/* Reveal: visível por padrão, anima só com JS ativo */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity 800ms var(--ease-nue),transform 800ms var(--ease-nue)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.d1{transition-delay:.12s}.js .rv.d2{transition-delay:.24s}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav" aria-label="Navegação">
+  <div class="wrap">
+    <a href="#inicio" class="brand" data-logo="logo-branco.svg">NUE <small>WELLNESS CLINIC</small></a>
+    <div class="nav-links">
+      <a href="#oportunidade">Oportunidade</a>
+      <a href="#estrategia">Estratégia</a>
+      <a href="#solucao">Solução</a>
+      <a href="#investimento">Investimento</a>
+      <a href="#decisao">Decisão</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+  </div>
+  <div class="progress" id="progress"></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" hidden>
+  <a href="#oportunidade">Oportunidade</a>
+  <a href="#desafio">Desafio</a>
+  <a href="#estrategia">Estratégia</a>
+  <a href="#solucao">Solução</a>
+  <a href="#visualizacao">Visualização</a>
+  <a href="#investimento">Investimento</a>
+  <a href="#decisao">Decisão</a>
+</div>
+
+<!-- 01 ABERTURA -->
+<header class="hero" id="inicio">
+  <!-- Fotos: cada .scene com data-photo carrega img/<arquivo>. Sem o arquivo, fica o degradê. Lista em img/LEIA-ME.md -->
+  <div class="scene" data-photo="hero.jpg" role="img" aria-label="Recepção da NUE Wellness Clinic"></div>
+  <div class="shade"></div>
+  <svg class="curve" viewBox="0 0 1200 320" preserveAspectRatio="none" aria-hidden="true"><path d="M-20 230C180 80 380 310 620 170S980 40 1220 150"/><path d="M-20 262C200 120 400 330 640 200S1000 80 1220 190"/></svg>
+  <div class="wrap">
+    <span class="eyebrow">01 / Proposta de presença digital</span>
+    <h1>A experiência NUE merece começar <em>antes da primeira visita.</em></h1>
+    <div class="hero-foot">
+      <p>Uma clínica que redefine a experiência em saúde, bem-estar e longevidade precisa de uma presença digital à altura do seu conceito.</p>
+    </div>
+    <a href="#oportunidade" class="text-btn">Conheça a proposta <span class="arr" aria-hidden="true">↓</span></a>
+  </div>
+</header>
+
+<main>
+
+<!-- 02 OPORTUNIDADE -->
+<section class="sec light" id="oportunidade">
+  <div class="wrap">
+    <div class="intro rv">
+      <span class="eyebrow">02 / A oportunidade</span>
+      <h2 class="h2">O primeiro contato com a NUE pode acontecer <em>muito antes da recepção.</em></h2>
+      <p class="lead">Antes de conhecer a estrutura ou falar com um especialista, o paciente costuma encontrar a clínica em uma pesquisa no Google. Nesse momento, o digital precisa transmitir a mesma confiança e atenção aos detalhes que a NUE oferece presencialmente.</p>
+    </div>
+
+    <div class="journey">
+      <div class="step rv">
+        <span class="dot">01</span>
+        <div class="tile">
+          <div class="ui-search" aria-hidden="true">
+            <div class="bar">transplante capilar curitiba</div>
+            <div class="res hl"><b>NUE Wellness Clinic</b><i style="width:90%"></i><i style="width:64%"></i></div>
+            <div class="res"><i style="width:55%"></i><i style="width:80%"></i></div>
+          </div>
+        </div>
+        <h3>Descoberta</h3>
+        <p>O paciente encontra a NUE.</p>
+      </div>
+      <div class="step rv d1">
+        <span class="dot">02</span>
+        <div class="tile">
+          <div class="ui-profile" aria-hidden="true">
+            <div class="scene alt" data-photo="especialista.jpg"></div>
+            <div><b>Especialista<br>NUE</b><small>Conceito · Diferenciais</small><div class="chips"><i></i><i></i><i></i></div></div>
+          </div>
+        </div>
+        <h3>Confiança</h3>
+        <p>Conhece o conceito, os especialistas e os diferenciais.</p>
+      </div>
+      <div class="step rv d2">
+        <span class="dot">03</span>
+        <div class="tile">
+          <div class="ui-chat" aria-hidden="true">
+            <div class="msg">Olá! Gostaria de agendar uma avaliação.</div>
+            <div class="rep">Claro. Qual o melhor horário para você?</div>
+            <div class="cta">AGENDAR</div>
+          </div>
+        </div>
+        <h3>Agendamento</h3>
+        <p>Encontra um caminho simples para entrar em contato.</p>
+      </div>
+    </div>
+
+    <div class="quote-band rv">
+      <p class="punch">A experiência começa na descoberta. <em>A confiança se constrói em cada interação.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 DESAFIO -->
+<section class="sec" id="desafio">
+  <div class="wrap">
+    <div class="intro rv">
+      <span class="eyebrow">03 / O desafio</span>
+      <h2 class="h2">Não basta estar presente. <em>É preciso ser relevante para cada busca.</em></h2>
+      <p class="lead">A NUE reúne diferentes especialidades, profissionais e experiências. Cada público chega com uma intenção específica, e a forma como a clínica apresenta a solução influencia a decisão de entrar em contato.</p>
+    </div>
+
+    <div class="audience rv">
+      <div class="aud"><span>Quem busca</span><b>Transplante capilar</b></div>
+      <div class="aud"><span>Quem busca</span><b>Protocolo de emagrecimento</b></div>
+      <div class="aud"><span>Quem busca</span><b>Uma experiência de SPA</b></div>
+    </div>
+
+    <div class="flows">
+      <div class="flow generic rv">
+        <div class="flow-head"><span>Cenário 01</span><h3>Experiência genérica</h3></div>
+        <ol class="path">
+          <li>Pesquisa no Google</li>
+          <li>Página institucional</li>
+          <li class="lost">Paciente precisa procurar a informação<small>Navega entre páginas até encontrar o que buscava</small></li>
+          <li>Possível agendamento</li>
+        </ol>
+      </div>
+      <div class="flow direct rv d1">
+        <div class="flow-head"><span>Cenário 02</span><h3>Experiência direcionada</h3></div>
+        <ol class="path">
+          <li>Pesquisa por uma especialidade</li>
+          <li>Página dedicada ao procedimento</li>
+          <li>Informações e especialista correspondente</li>
+          <li>Agendamento direcionado</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="quote-band rv">
+      <p class="punch">Quanto mais relevante a experiência, <em>mais simples o caminho entre o interesse e o contato.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- 04 ESTRATÉGIA -->
+<section class="sec light" id="estrategia">
+  <div class="wrap">
+    <div class="intro rv">
+      <span class="eyebrow">04 / A estratégia</span>
+      <h2 class="h2">Uma marca. Diferentes especialidades. <em>Uma experiência integrada.</em></h2>
+      <p class="lead">Uma estrutura digital que apresenta a NUE como marca única, preservando a identidade e os diferenciais de cada frente de atendimento.</p>
+    </div>
+
+    <div class="eco">
+      <div class="orb rv"><div data-logo="logo-branco.svg"><b>NUE</b><small>WELLNESS CLINIC</small></div></div>
+      <div class="stem"></div>
+      <div class="branches" aria-hidden="true"></div>
+      <div class="pillars">
+        <div class="pillar rv">
+          <h3>Marca</h3>
+          <p>O que faz da NUE uma experiência única</p>
+          <ul class="nodes"><li>Conceito wellness</li><li>Estrutura</li><li>Posicionamento</li><li>Experiência</li></ul>
+        </div>
+        <div class="pillar rv d1">
+          <h3>Especialistas</h3>
+          <p>Quem conduz cada frente</p>
+          <ul class="nodes people"><li>Ricardo</li><li>Werner</li><li>Mario</li><li>Vanessa</li><li>Pierre</li></ul>
+        </div>
+        <div class="pillar rv d2">
+          <h3>Soluções</h3>
+          <p>O que cada paciente procura</p>
+          <ul class="nodes"><li>Emagrecimento</li><li>Lipedema</li><li>Saúde intestinal</li><li>Transplante capilar</li><li>Dermatologia e harmonização</li><li>Rinoplastia</li><li>Blefaroplastia</li><li>SPA</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="eco-close rv">
+      <p class="punch">Uma estrutura que fortalece a marca como um todo, <em>sem perder a relevância de cada especialidade.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 SOLUÇÃO -->
+<section class="sec light alt-bg" id="solucao">
+  <div class="wrap">
+    <div class="intro rv">
+      <span class="eyebrow">05 / A solução</span>
+      <h2 class="h2">Duas formas de construir o próximo capítulo <em>digital da NUE.</em></h2>
+    </div>
+
+    <div class="sols">
+      <article class="sol one rv">
+        <div class="lbl"><span>Opção 01</span><span>Presença digital</span></div>
+        <h3>Uma experiência institucional completa</h3>
+        <p class="tagline">Um website exclusivo que apresenta o conceito NUE, valoriza a estrutura e fortalece a autoridade dos especialistas.</p>
+        <div class="visual">
+          <div class="browser site" aria-hidden="true">
+            <div class="bar"><i></i><i></i><i></i><span></span></div>
+            <div class="s-hero"><div class="scene" data-photo="hero.jpg"></div><div class="ov"></div>
+              <div class="s-nav"><b>NUE</b><span><i></i><i></i><i></i></span></div>
+              <div class="s-copy"><h5>Ouse viver melhor por mais tempo.</h5><em>AGENDAR</em></div>
+            </div>
+            <div class="s-row"><div class="scene" data-photo="especialista.jpg"></div><div class="scene alt" data-photo="especialista-2.jpg"></div><div class="scene soft" data-photo="especialista-3.jpg"></div><div class="scene" data-photo="especialista-4.jpg"></div></div>
+          </div>
+        </div>
+        <ul class="deliv"><li>Home</li><li>Quem Somos</li><li>Nosso Conceito</li><li>Especialidades</li><li>Especialistas</li><li>Nossa Estrutura</li><li>SPA</li><li>Contato</li></ul>
+        <p class="note">Design exclusivo, layout responsivo, animações, WhatsApp, Google Maps, SEO institucional, Google Analytics e otimização de velocidade.</p>
+      </article>
+
+      <article class="sol two rv d1">
+        <div class="lbl"><span>Opção 02</span><em>Presença &amp; performance</em></div>
+        <h3>Uma experiência institucional conectada à aquisição de pacientes</h3>
+        <p class="tagline">Toda a opção 01, ampliada com páginas individuais para cada frente, pensadas a partir da intenção de busca e do caminho até o agendamento.</p>
+        <div class="visual">
+          <div class="stack" aria-hidden="true">
+            <div class="browser site">
+              <div class="bar"><i></i><i></i><i></i><span></span></div>
+              <div class="s-hero"><div class="scene" data-photo="hero.jpg"></div><div class="ov"></div>
+                <div class="s-nav"><b>NUE</b><span><i></i><i></i><i></i></span></div>
+                <div class="s-copy"><h5>Ouse viver melhor por mais tempo.</h5><em>AGENDAR</em></div>
+              </div>
+              <div class="s-row"><div class="scene" data-photo="especialista.jpg"></div><div class="scene alt" data-photo="especialista-2.jpg"></div><div class="scene soft" data-photo="especialista-3.jpg"></div><div class="scene" data-photo="especialista-4.jpg"></div></div>
+            </div>
+            <div class="pg"><div class="scene alt" data-photo="lp-spa.jpg"></div><span>SPA</span></div>
+            <div class="pg"><div class="scene soft" data-photo="lp-rinoplastia.jpg"></div><span>Rinoplastia</span></div>
+            <div class="pg"><div class="scene" data-photo="lp-transplante.jpg"></div><span>Transplante capilar</span></div>
+          </div>
+        </div>
+        <ul class="deliv">
+          <li class="plus">+ 8 landing pages de protocolos e procedimentos</li>
+          <li class="plus">+ 1 landing page exclusiva do SPA</li>
+          <li>Estrutura para Google Ads</li>
+          <li>Rastreamento de conversões por página</li>
+          <li>Conteúdo e CTAs direcionados</li>
+          <li>SEO individual por página</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="sol-close">
+      <p class="rv">A primeira solução <b>fortalece a presença digital</b> da NUE.</p>
+      <p class="rv d1">A segunda amplia essa presença com <b>uma estrutura preparada para campanhas</b> específicas de aquisição de pacientes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 06 VISUALIZAÇÃO -->
+<section class="sec vis" id="visualizacao">
+  <div class="wrap">
+    <div class="intro rv">
+      <span class="eyebrow">06 / Visualização</span>
+      <h2 class="h2">Cada detalhe projetado para refletir <em>a essência da NUE.</em></h2>
+    </div>
+
+    <div class="showcase rv">
+      <div class="main">
+        <div class="browser site" aria-hidden="true">
+          <div class="bar"><i></i><i></i><i></i><span></span></div>
+          <div class="s-hero"><div class="scene" data-photo="hero.jpg"></div><div class="ov"></div>
+            <div class="s-nav"><b>NUE</b><span><i></i><i></i><i></i><i></i></span></div>
+            <div class="s-copy"><h5>Ouse viver melhor por mais tempo.</h5><em>AGENDAR AVALIAÇÃO</em></div>
+          </div>
+          <div class="s-row"><div class="scene alt" data-photo="especialista.jpg"></div><div class="scene" data-photo="especialista-2.jpg"></div><div class="scene soft" data-photo="especialista-3.jpg"></div><div class="scene alt" data-photo="especialista-4.jpg"></div></div>
+        </div>
+      </div>
+      <div class="phone-pos">
+        <div class="phone" aria-hidden="true">
+          <div class="screen">
+            <div class="lp-top"><div class="scene alt" data-photo="especialista.jpg"></div><div class="ov"></div><span class="notch"></span>
+              <div class="tx"><small>Landing page</small><b>Emagrecimento</b></div>
+            </div>
+            <div class="lp-body">
+              <div class="lp-doc"><div class="scene soft" data-photo="especialista.jpg"></div><span><strong>Dr. Ricardo Cardoso</strong>Founder &amp; CEO<br>CRM PR-55717 · PA-18876</span></div>
+              <ul class="lp-tags"><li>Emagrecimento</li><li>Lipedema</li><li>Saúde hormonal</li><li>Longevidade</li></ul>
+              <div class="lp-line"></div><div class="lp-line s"></div>
+              <div class="lp-feat"><i></i><i></i></div>
+              <div class="lp-btn">Agendar avaliação</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="concept rv" style="margin-top:28px">Representações conceituais, não são layouts finais aprovados</p>
+
+    <div class="vis-cap">
+      <div class="rv">
+        <span class="k">Experiência institucional</span>
+        <h3>A marca em primeiro plano</h3>
+        <ul class="deliv"><li>Hero com fotografia da clínica</li><li>Tipografia editorial</li><li>Navegação minimalista</li><li>Especialistas</li><li>Especialidades</li><li>Ambientes</li><li>Botões de agendamento</li></ul>
+      </div>
+      <div class="rv d1">
+        <span class="k">Experiência de conversão</span>
+        <h3>Cada especialidade com seu próprio caminho</h3>
+        <ul class="deliv"><li>Nome da especialidade</li><li>Fotografia do especialista</li><li>Apresentação do procedimento</li><li>Diferenciais do atendimento</li><li>Informações ao paciente</li><li>Chamada para agendamento</li></ul>
+      </div>
+    </div>
+
+    <div class="quote-band rv">
+      <p class="punch">O mesmo padrão de excelência, <em>adaptado a diferentes momentos da jornada do paciente.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- 07 INVESTIMENTO -->
+<section class="sec light" id="investimento">
+  <div class="wrap">
+    <div class="intro rv">
+      <span class="eyebrow">07 / Investimento</span>
+      <h2 class="h2">Um investimento na experiência <em>digital da NUE.</em></h2>
+      <p class="lead">Duas soluções com o mesmo cuidado estético e técnico, diferenciadas pela profundidade da estrutura e pelas possibilidades de aplicação no marketing.</p>
+    </div>
+
+    <div class="prices">
+      <div class="price-card one rv">
+        <div class="top"><span>Opção 01</span><span>Presença digital</span></div>
+        <h3>Website institucional completo</h3>
+        <div class="amount"><sup>R$</sup>4.997,90</div>
+        <div class="term"><span>Prazo estimado</span><b>20 a 30 dias úteis</b></div>
+      </div>
+      <div class="price-card two rv d1">
+        <div class="top"><span>Opção 02 · Presença &amp; performance</span><span class="badge">Recomendada</span></div>
+        <h3>Website institucional completo + 9 landing pages estratégicas</h3>
+        <div class="amount"><sup>R$</sup>8.997,90</div>
+        <div class="term"><span>Prazo estimado</span><b>35 a 45 dias úteis</b></div>
+      </div>
+    </div>
+
+    <div class="delta rv">
+      <div class="plus"><small>Incluso nas duas opções</small>2 meses grátis</div>
+      <p>Após a publicação, a NUE conta com <b>2 meses de manutenção e ajustes sem custo</b>, para que o site acompanhe os primeiros passos da nova presença digital com todo o cuidado.</p>
+    </div>
+
+    <div class="conds rv">
+      <div class="cond"><span>Pagamento</span><b>50% para iniciar, 50% na entrega</b></div>
+      <div class="cond"><span>Manutenção</span><b>2 meses grátis após a publicação</b><p>Manutenção e ajustes sem custo adicional.</p></div>
+    </div>
+    <p class="fine rv">Os conteúdos sobre procedimentos médicos serão desenvolvidos a partir das informações fornecidas e aprovadas pelos profissionais responsáveis, respeitando as normas de publicidade médica aplicáveis.</p>
+  </div>
+</section>
+
+<!-- 08 ENCERRAMENTO -->
+<section class="sec closing" id="decisao">
+  <div class="scene soft" data-photo="encerramento.jpg" aria-hidden="true"></div>
+  <div class="shade"></div>
+  <svg class="curve" viewBox="0 0 1200 320" preserveAspectRatio="none" aria-hidden="true"><path d="M-20 230C180 80 380 310 620 170S980 40 1220 150"/><path d="M-20 262C200 120 400 330 640 200S1000 80 1220 190"/></svg>
+  <div class="wrap">
+    <div class="intro rv">
+      <span class="eyebrow">08 / Decisão</span>
+      <h2 class="h2">A NUE já possui uma experiência que a diferencia. <em>Agora, é hora de traduzi-la para o digital.</em></h2>
+      <p class="lead">Mais do que desenvolver páginas, queremos construir uma presença digital que represente o conceito da clínica, valorize seus especialistas e acompanhe suas ambições de crescimento. Para quem descobre a NUE pela primeira vez e para quem já está pronto para agendar.</p>
+    </div>
+
+    <p class="final rv">O próximo capítulo da experiência NUE começa aqui.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#inicio" class="brand" data-logo="logo-branco.svg">NUE <small>WELLNESS CLINIC</small></a>
+    <p>Ouse viver melhor por mais tempo.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'),bar=document.getElementById('progress');
+  function onScroll(){
+    var y=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;
+    nav.classList.toggle('scrolled',y>24||!menu.hidden);
+    bar.style.transform='scaleX('+(h>0?Math.min(1,y/h):0)+')';
+  }
+  var btn=document.getElementById('menuBtn'),menu=document.getElementById('mobileMenu');
+  function setMenu(open){menu.hidden=!open;btn.setAttribute('aria-expanded',String(open));btn.textContent=open?'Fechar':'Menu';document.body.style.overflow=open?'hidden':'';onScroll()}
+  btn.addEventListener('click',function(){setMenu(menu.hidden)});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  window.addEventListener('resize',function(){if(window.innerWidth>=960&&!menu.hidden)setMenu(false)});
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  if('IntersectionObserver' in window){
+    document.documentElement.classList.add('js');
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px',threshold:.04});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  }
+
+  // Fotos: só entra no lugar do degradê se o arquivo carregar
+  document.querySelectorAll('.scene[data-photo]').forEach(function(s){
+    var img=new Image();img.className='photo';img.alt='';img.decoding='async';
+    img.onload=function(){s.appendChild(img)};
+    img.src='img/'+s.dataset.photo;
+  });
+
+  // Logo oficial: entra no lugar do texto se o SVG existir em img/
+  document.querySelectorAll('[data-logo]').forEach(function(el){
+    var img=new Image();img.alt='NUE Wellness Clinic';
+    img.onload=function(){el.textContent='';el.appendChild(img);el.classList.add('has-logo')};
+    img.src='img/'+el.dataset.logo;
+  });
+})();
+</script>
+</body>
+</html>
